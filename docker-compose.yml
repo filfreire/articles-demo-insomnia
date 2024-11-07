@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   articles-app:
-    image: ghcr.io/filfreire/articles-insomnia:latest
+    image: ghcr.io/filfreire/articles-demo-insomnia:latest
     container_name: articles-app
     ports:
       - "3000:3000"

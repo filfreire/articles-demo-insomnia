@@ -12,4 +12,4 @@ docker-run:
 	docker run -d --name articles-app -p 3000:3000 articles-app
 
 docker-run-image:
-	docker run -d --name articles-app -p 3000:3000 ghcr.io/filfreire/articles-insomnia:latest
+	docker run -d --name articles-app -p 3000:3000 ghcr.io/filfreire/articles-demo-insomnia:latest
