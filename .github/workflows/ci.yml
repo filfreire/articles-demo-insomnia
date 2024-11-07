@@ -35,7 +35,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/groceries-insomnia:latest
+        tags: ghcr.io/${{ github.repository_owner }}/articles-demo-insomnia:latest
 
   deploy:
     needs: build
@@ -92,9 +92,9 @@ jobs:
           compression: xz
       - name: (Setup) Add hosts to /etc/hosts
         run: |
-          sudo echo "100.126.226.107 dev.groceries.filfreire-t480" | sudo tee -a /etc/hosts
+          sudo echo "100.126.226.107 dev.articles.filfreire-t480" | sudo tee -a /etc/hosts
 
-      - run: curl -L dev.groceries.filfreire-t480/health
+      - run: curl -L dev.articles.filfreire-t480/health
 
       - name: Run test suites
         run: inso run test -w insomnia-workspace.yaml "Sanity checks" --env Dev --ci
