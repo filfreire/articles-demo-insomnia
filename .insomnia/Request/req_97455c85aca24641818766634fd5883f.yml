@@ -1,0 +1,27 @@
+_id: req_97455c85aca24641818766634fd5883f
+type: Request
+parentId: fld_3f55e91452c7424c8ad6473fb0acd341
+modified: 1730975368287
+created: 1730975368287
+url: "{{baseUrl}}/health"
+name: /health
+description: Get the list of articles
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730975367038
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

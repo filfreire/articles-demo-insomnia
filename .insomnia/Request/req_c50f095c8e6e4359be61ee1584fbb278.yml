@@ -1,0 +1,49 @@
+_id: req_c50f095c8e6e4359be61ee1584fbb278
+type: Request
+parentId: fld_da3fc0ef713b4eb7999fcc111bb94104
+modified: 1730975368277
+created: 1730975368277
+url: "{{baseUrl}}/add_article"
+name: /add_article
+description: Add a article to the list
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{
+        "author": "test mctest",
+        "title": "finding atlantis",
+        "year": 2024,
+        "publisher": "Elsevier"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: >
+  
+  // Cleanup at the start of test
+
+  insomnia.sendRequest(insomnia.environment.get('baseUrl') || insomnia.globals.get('baseUrl') + '/clear_all', (error, response) => {
+    if (error) {console.log(error);} else {console.log(response);}
+  });
+metaSortKey: -1730975367051
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+  insomnia.test("Check message for success", function () {
+      var jsonData = insomnia.response.json();
+      insomnia.expect(jsonData.message).to.eql('article added successfully');
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

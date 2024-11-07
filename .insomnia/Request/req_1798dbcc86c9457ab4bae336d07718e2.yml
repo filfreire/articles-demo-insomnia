@@ -1,0 +1,55 @@
+_id: req_1798dbcc86c9457ab4bae336d07718e2
+type: Request
+parentId: fld_92067d1953ba46f58d0d38cca1576bc1
+modified: 1730975368286
+created: 1730975368286
+url: "{{baseUrl}}/delete_article"
+name: /delete_article
+description: Delete a article from the list
+method: DELETE
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{
+        "author": "test mctest",
+        "title": "finding atlantis",
+        "year": 2024,
+        "publisher": "Elsevier"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730975367040
+isPrivate: false
+pathParameters: null
+afterResponseScript: >+
+  insomnia.test("Status code is 404", function () {
+      insomnia.response.to.have.status(404);
+  });
+
+
+  insomnia.test("Check message for success", function () {
+      var jsonData = insomnia.response.json();
+      insomnia.expect(jsonData.error).to.eql('article not found');
+  });
+
+
+
+  // Cleanup at the end of test
+
+  insomnia.sendRequest(insomnia.environment.get('baseUrl') || insomnia.globals.get('baseUrl') + '/clear_all', (error, response) => {
+    if (error) {console.log(error);} else {console.log(response);}
+  });
+
+
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

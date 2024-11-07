@@ -1,0 +1,24 @@
+_id: req_a0ddc33645e2418a877cd8bbde8cc0f5
+type: Request
+parentId: fld_da3fc0ef713b4eb7999fcc111bb94104
+modified: 1730975368280
+created: 1730975368280
+url: "{{baseUrl}}/get_articles"
+name: /get_articles
+description: Get the list of articles
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730975367050
+isPrivate: false
+pathParameters: null
+afterResponseScript: ""
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

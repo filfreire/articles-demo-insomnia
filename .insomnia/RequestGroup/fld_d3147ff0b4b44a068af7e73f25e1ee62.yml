@@ -1,0 +1,18 @@
+_id: fld_d3147ff0b4b44a068af7e73f25e1ee62
+type: RequestGroup
+parentId: wrk_d951baa51c3b4718971ad47105004e31
+modified: 1730975368226
+created: 1730975368226
+name: articles API
+description: |-
+  An API to manage a list of scientific articles
+
+  Contact Support:
+   Email: noreply@insomnia.rest
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730975367058
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

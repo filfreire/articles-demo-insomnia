@@ -1,0 +1,14 @@
+_id: fld_da3fc0ef713b4eb7999fcc111bb94104
+type: RequestGroup
+parentId: fld_af88c891b447461fb30a49f79e41d092
+modified: 1730975368249
+created: 1730975368249
+name: Can Create and Delete article
+description: ""
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730975367052
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

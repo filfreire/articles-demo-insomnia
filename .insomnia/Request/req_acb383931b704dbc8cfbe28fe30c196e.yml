@@ -1,0 +1,36 @@
+_id: req_acb383931b704dbc8cfbe28fe30c196e
+type: Request
+parentId: fld_da3fc0ef713b4eb7999fcc111bb94104
+modified: 1730975368280
+created: 1730975368280
+url: "{{baseUrl}}/delete_article"
+name: /delete_article
+description: Delete a article from the list
+method: DELETE
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{
+        "author": "test mctest",
+        "title": "finding atlantis",
+        "year": 2024,
+        "publisher": "Elsevier"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730975367049
+isPrivate: false
+pathParameters: null
+afterResponseScript: ""
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
