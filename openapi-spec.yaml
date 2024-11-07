@@ -1,0 +1,67 @@
+openapi: 3.1.0
+servers:
+  - url: http://localhost:3000
+  - url: http://articles.filfreire-t480
+tags:
+  - name: test
+    description: just a test tag
+info:
+  title: articles API
+  version: 1.0.0
+  description: An API to manage a list of scientific articles
+  contact:
+    email: noreply@insomnia.rest
+paths:
+  /add_article:
+    post:
+      operationId: add_article
+      tags:
+        - test
+      summary: Add a article to the list
+      description: Add a article to the list
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                article:
+                  type: string
+      responses:
+        '200':
+          description: article added successfully
+        '400':
+          description: article already exists
+  /get_articles:
+    get:
+      summary: Get the list of articles
+      description: Get the list of articles
+      operationId: get_articles
+      tags:
+        - test
+      responses:
+        '200':
+          description: List of articles retrieved successfully
+  /delete_article:
+    delete:
+      summary: Delete a article from the list
+      description: Delete a article from the list
+      operationId: delete_article
+      tags:
+        - test
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                article:
+                  type: string
+      responses:
+        '200':
+          description: article deleted successfully
+        '404':
+          description: article not found
+
