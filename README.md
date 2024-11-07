@@ -19,3 +19,35 @@ Run on terminal:
 ```bash
 docker run -d --name articles-app -p 3000:3000 ghcr.io/filfreire/articles-demo-insomnia:latest
 ```
+
+## Usage Examples
+
+### Add Article
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{
+    "article": {
+        "author": "Jane Smith",
+        "title": "Understanding OpenAPI",
+        "publisher": "TechPress",
+        "year": 2023
+    }
+}' http://localhost:3000/add_article
+```
+
+### Get Articles
+
+```bash
+curl http://localhost:3000/get_articles
+```
+
+### Delete Article
+
+```bash
+curl -X DELETE -H "Content-Type: application/json" -d '{
+    "article": {
+        "author": "Jane Smith",
+        "title": "Understanding OpenAPI"
+    }
+}' http://localhost:3000/delete_article
+```
