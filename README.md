@@ -7,6 +7,19 @@ Example Demo for tinkering with Insomnia API Client
 - Install Python (e.g. version 3.11)
 - Run `make install dev`.
 
+### CI Setup
+
+Be sure to define the following repository secrets:
+
+```plaintext
+DEPLOY_PATH
+PSWD
+REMOTE_HOST
+REMOTE_USER
+SSH_KEY
+TAILSCALE_AUTHKEY
+```
+
 ### Docker setup
 
 - Install Docker
