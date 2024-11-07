@@ -17,8 +17,8 @@ paths:
       operationId: add_article
       tags:
         - test
-      summary: Add a article to the list
-      description: Add a article to the list
+      summary: Add an article to the list
+      description: Add an article to the list
       requestBody:
         required: true
         content:
@@ -27,12 +27,28 @@ paths:
               type: object
               properties:
                 article:
-                  type: string
+                  $ref: '#/components/schemas/Article'
       responses:
         '200':
-          description: article added successfully
+          description: Article added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: article added successfully
         '400':
-          description: article already exists
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: article already exists
   /get_articles:
     get:
       summary: Get the list of articles
@@ -43,10 +59,19 @@ paths:
       responses:
         '200':
           description: List of articles retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  articles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Article'
   /delete_article:
     delete:
-      summary: Delete a article from the list
-      description: Delete a article from the list
+      summary: Delete an article from the list
+      description: Delete an article from the list
       operationId: delete_article
       tags:
         - test
@@ -58,10 +83,55 @@ paths:
               type: object
               properties:
                 article:
-                  type: string
+                  type: object
+                  properties:
+                    author:
+                      type: string
+                    title:
+                      type: string
+                  required:
+                    - author
+                    - title
       responses:
         '200':
-          description: article deleted successfully
+          description: Article deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: article deleted successfully
         '404':
-          description: article not found
-
+          description: Article not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: article not found
+components:
+  schemas:
+    Article:
+      type: object
+      required:
+        - author
+        - title
+        - publisher
+        - year
+      properties:
+        author:
+          type: string
+          description: The author of the article
+        title:
+          type: string
+          description: The title of the article
+        publisher:
+          type: string
+          description: The publisher of the article
+        year:
+          type: integer
+          description: The publication year of the article
