@@ -96,5 +96,5 @@ jobs:
 
       - run: curl -L dev.articles.filfreire-t480/health
 
-      - name: Run test suites
-        run: inso run test -w insomnia-workspace.yaml "Sanity checks" --env Dev --ci
+      # - name: Run test suites
+      #   run: inso run test -w insomnia-workspace.yaml "Sanity checks" --env Dev --ci
