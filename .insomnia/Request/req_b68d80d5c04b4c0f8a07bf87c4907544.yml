@@ -1,0 +1,44 @@
+_id: req_b68d80d5c04b4c0f8a07bf87c4907544
+type: Request
+parentId: fld_c7477756f9b84f73b880a5516ac27297
+modified: 1730978029965
+created: 1730978029965
+url: "{{baseUrl}}/delete_article"
+name: Delete a article from the list
+description: Delete a article from the list
+method: DELETE
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{
+        "author": "test mctest",
+        "title": "finding atlantis",
+        "year": 2024,
+        "publisher": "Elsevier"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730978025673
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+
+  insomnia.test("Check message for success", function () {
+      var jsonData = insomnia.response.json();
+      insomnia.expect(jsonData.message).to.eql('article deleted successfully');
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

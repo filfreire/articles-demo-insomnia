@@ -1,0 +1,14 @@
+_id: fld_7e30bc37da3d4f479e97451e5f4cd13d
+type: RequestGroup
+parentId: fld_f3c198971c0a46f881c9c9fa2f3efb86
+modified: 1730978030043
+created: 1730978030043
+name: Debug
+description: ""
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730978025658
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

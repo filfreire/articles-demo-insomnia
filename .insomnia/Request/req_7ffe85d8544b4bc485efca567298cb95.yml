@@ -1,0 +1,43 @@
+_id: req_7ffe85d8544b4bc485efca567298cb95
+type: Request
+parentId: fld_3dc624a1ffe441698355548eeef786af
+modified: 1730978030033
+created: 1730978030033
+url: "{{baseUrl}}/add_article"
+name: /add_article
+description: Add a article to the list
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{
+        "author": "test mctest",
+        "title": "finding atlantis",
+        "year": 2024,
+        "publisher": "Elsevier"
+      }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730978025664
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 400", function () {
+      insomnia.response.to.have.status(400);
+  });
+  insomnia.test("Check message for success", function () {
+      var jsonData = insomnia.response.json();
+      insomnia.expect(jsonData.error).to.eql('article already exists');
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

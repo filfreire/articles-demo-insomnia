@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  articles-app:
+    image: ghcr.io/filfreire/articles-demo-insomnia:latest
+    container_name: articles-app
+    ports:
+      - "3000:3000"
+    restart: always
+    deploy:
+      update_config:
+        order: start-first
+    pull_policy: always
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      - DOMAIN=dev.articles.filfreire-t480
+    depends_on:
+      - articles-app

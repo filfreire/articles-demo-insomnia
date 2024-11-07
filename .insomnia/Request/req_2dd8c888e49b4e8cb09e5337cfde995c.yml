@@ -1,0 +1,24 @@
+_id: req_2dd8c888e49b4e8cb09e5337cfde995c
+type: Request
+parentId: fld_7e30bc37da3d4f479e97451e5f4cd13d
+modified: 1730978030044
+created: 1730978030044
+url: "{{baseUrl}}/clear_all"
+name: Clear all
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730978025656
+isPrivate: false
+pathParameters: null
+afterResponseScript: ""
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,27 @@
+_id: req_140d65ae5a9346dea769cf34cab28b24
+type: Request
+parentId: fld_c7477756f9b84f73b880a5516ac27297
+modified: 1730978029964
+created: 1730978029964
+url: "{{baseUrl}}/get_articles"
+name: Get the list of articles
+description: Get the list of articles
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730978025674
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,14 @@
+_id: fld_c7477756f9b84f73b880a5516ac27297
+type: RequestGroup
+parentId: fld_f3c198971c0a46f881c9c9fa2f3efb86
+modified: 1730978029963
+created: 1730978029963
+name: Default Requests
+description: ""
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730978025676
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

@@ -1,0 +1,14 @@
+_id: fld_056d86ec534f4c33acdf9b0085872915
+type: RequestGroup
+parentId: fld_f3c198971c0a46f881c9c9fa2f3efb86
+modified: 1730978029987
+created: 1730978029987
+name: Sanity Tests
+description: ""
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730978025672
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

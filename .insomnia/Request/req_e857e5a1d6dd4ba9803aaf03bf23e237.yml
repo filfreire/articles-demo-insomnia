@@ -1,0 +1,28 @@
+_id: req_e857e5a1d6dd4ba9803aaf03bf23e237
+type: Request
+parentId: fld_04c3861869be47ffb1d46038c4157ed2
+modified: 1730978425937
+created: 1730978287813
+url: "{{baseUrl}}/get_articles_bibtex"
+name: /get_articles
+description: Get the list of articles
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+preRequestScript: ""
+metaSortKey: -1730978025663
+isPrivate: false
+pathParameters: []
+afterResponseScript: |+
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

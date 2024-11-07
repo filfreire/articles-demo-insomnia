@@ -1,0 +1,137 @@
+openapi: 3.1.0
+servers:
+  - url: http://localhost:3000
+  - url: http://dev.articles.filfreire-t480
+tags:
+  - name: test
+    description: just a test tag
+info:
+  title: articles API
+  version: 1.0.0
+  description: An API to manage a list of scientific articles
+  contact:
+    email: noreply@insomnia.rest
+paths:
+  /add_article:
+    post:
+      operationId: add_article
+      tags:
+        - test
+      summary: Add an article to the list
+      description: Add an article to the list
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                article:
+                  $ref: '#/components/schemas/Article'
+      responses:
+        '200':
+          description: Article added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: article added successfully
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: article already exists
+  /get_articles:
+    get:
+      summary: Get the list of articles
+      description: Get the list of articles
+      operationId: get_articles
+      tags:
+        - test
+      responses:
+        '200':
+          description: List of articles retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  articles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Article'
+  /delete_article:
+    delete:
+      summary: Delete an article from the list
+      description: Delete an article from the list
+      operationId: delete_article
+      tags:
+        - test
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                article:
+                  type: object
+                  properties:
+                    author:
+                      type: string
+                    title:
+                      type: string
+                  required:
+                    - author
+                    - title
+      responses:
+        '200':
+          description: Article deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: article deleted successfully
+        '404':
+          description: Article not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: article not found
+components:
+  schemas:
+    Article:
+      type: object
+      required:
+        - author
+        - title
+        - publisher
+        - year
+      properties:
+        author:
+          type: string
+          description: The author of the article
+        title:
+          type: string
+          description: The title of the article
+        publisher:
+          type: string
+          description: The publisher of the article
+        year:
+          type: integer
+          description: The publication year of the article

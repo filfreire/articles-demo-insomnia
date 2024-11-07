@@ -1,0 +1,14 @@
+_id: fld_f3c198971c0a46f881c9c9fa2f3efb86
+type: RequestGroup
+parentId: wrk_b56895cfe4d74344a1aaab6d6b3ff126
+modified: 1730978029962
+created: 1730978029962
+name: articles API
+description: An API to manage a list of scientific articles and papers
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1730978025677
+preRequestScript: ""
+afterResponseScript: ""
+authentication: {}
+headers: null

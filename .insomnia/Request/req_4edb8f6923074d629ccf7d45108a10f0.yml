@@ -1,0 +1,46 @@
+_id: req_4edb8f6923074d629ccf7d45108a10f0
+type: Request
+parentId: fld_c7477756f9b84f73b880a5516ac27297
+modified: 1730978029964
+created: 1730978029964
+url: "{{baseUrl}}/add_article"
+name: Add a article to the list
+description: Add a article to the list
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "article":{{random_article}}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+preRequestScript: |
+  // Cleanup at the start of test
+
+
+  insomnia.sendRequest('http://filfreire.com/example.js', (error, response) => {
+    if (error) {
+      console.log(error);
+    } else {
+      eval(response.text());
+      let articleObject = random_article_obj();
+      insomnia.environment.set("random_article", JSON.stringify(articleObject));
+    }
+  });
+metaSortKey: -1730978025675
+isPrivate: false
+pathParameters: null
+afterResponseScript: |-
+  insomnia.test("Status code is 200", function () {
+      insomnia.response.to.have.status(200);
+  });
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

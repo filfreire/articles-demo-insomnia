@@ -1,0 +1,16 @@
+_id: env_730279bf2ac607db073898757ce72cacd91653a7
+type: Environment
+parentId: wrk_b56895cfe4d74344a1aaab6d6b3ff126
+modified: 1730978549408
+created: 1730978037323
+name: Base Environment
+data:
+  random_article: '{"author":"Doe, A.","title":"Advances in Machine
+    Learning","publisher":"AI Journal","year":2019}'
+dataPropertyOrder:
+  "&":
+    - random_article
+color: null
+isPrivate: false
+metaSortKey: 1730978037323
+environmentType: kv
