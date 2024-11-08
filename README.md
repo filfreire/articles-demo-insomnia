@@ -5,7 +5,11 @@ Example Demo for tinkering with Insomnia API Client
 ## Setup
 
 - Install Python (e.g. version 3.11)
-- Run `make install dev`.
+- Run `make install dev`. 
+
+Don't want to deal with Python directly?
+- Install Docker
+- Run `make docker-build docker-run`
 
 ### CI Setup
 
