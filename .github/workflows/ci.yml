@@ -88,7 +88,7 @@ jobs:
           tags: tag:ci
       - uses: kong/setup-inso@v1.1.6
         with:
-          inso-version: 9.3.4-beta.1
+          inso-version: 10.2.0-beta.3
           compression: xz
       - name: (Setup) Add hosts to /etc/hosts
         run: |
